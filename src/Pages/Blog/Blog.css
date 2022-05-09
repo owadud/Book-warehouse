@@ -1,0 +1,14 @@
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .blog h2{
+      text-align: center;
+      background-color:  #1241a5;
+      color: #fff;
+      padding:10px;
+
+  }
+  .blog a{
+      text-decoration: none;
+  }
