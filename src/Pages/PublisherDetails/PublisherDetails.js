@@ -3,12 +3,12 @@ import { Button, Card } from 'react-bootstrap';
 import {useNavigate } from 'react-router-dom';
 
 const PublisherDetails = ({ publisher }) => {
-    const { supply, description, price, picture, quantity, email,id } = publisher;
+    const { supply, description, price, picture, quantity, email,_id } = publisher;
 
     const navigate = useNavigate();
 
     const navigateToProductDetail = id =>{
-        navigate(`/update/${id}`);
+        navigate(`/books/update/${id}`);
     }
     return (
         <div>
@@ -40,7 +40,7 @@ const PublisherDetails = ({ publisher }) => {
                     </Card.Body>
                     <Card.Footer  >
                        
-                            <Button onClick={() => navigateToProductDetail(id)} variant="primary">Update</Button>
+                            <Button onClick={() => navigateToProductDetail(_id)} variant="primary">Update</Button>
                        
                     </Card.Footer>
                 </Card>
