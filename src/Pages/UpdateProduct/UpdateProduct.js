@@ -36,7 +36,7 @@ const UpdateProduct = () => {
         <div>
 
             <div className='text-center'>
-                <p>{product._id}</p>
+                
                 <h2>Supplier: {product.supply}</h2>
                 <h2>Email: {product.email}</h2>
                 <h2>Phone: {product.phone}</h2>
@@ -44,7 +44,9 @@ const UpdateProduct = () => {
                 <Link to="/checkout">
                     <button className='btn btn-primary'>Delivered</button>
                 </Link>
+                
                 <button className='btn btn-danger' onClick={() => handleDelete(product._id)}>Delete</button>
+               
             </div>
         </div>
     );

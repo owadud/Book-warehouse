@@ -1,11 +1,19 @@
 import React from 'react';
-import {Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.config';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
+    const [user] = useAuthState(auth);
+
+    const handleSignOut = () =>{
+        signOut(auth);
+    }
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark"  sticky="top">
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
                 <Container>
                     <Navbar.Brand as={Link} to='/home'>Book Warehouse Manager</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -14,17 +22,27 @@ const Header = () => {
                             <Nav.Link href="#features">Features</Nav.Link>
                             <Nav.Link as={Link} to="blog">Blog</Nav.Link>
                             <Nav.Link href="https://stackoverflow.com/questions/72158366/what-is-the-main-reasons-of-using-jwt" target="_blank">StackOverFlow</Nav.Link>
-                            
+
                         </Nav>
                         <Nav>
-                            <Nav.Link as={Link} to="addSupplier">Add Supplier</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
-                                Dank memes
-                            </Nav.Link>
+                            {   user?
+                                <Nav.Link as={Link} to="addSupplier">Add Supplier</Nav.Link> : ''
+                               
+                                
+                            }
+                            
+                            {
+                                user ?
+                                    <button className='btn btn-link text-primary text-decoration-none' onClick={handleSignOut}>sign out</button>
+                                    :
+                                    <Nav.Link as={Link} to="signup">
+                                        SignUp
+                                    </Nav.Link>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
-           </Navbar>
+            </Navbar>
         </>
     );
 };

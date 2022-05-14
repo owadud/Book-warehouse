@@ -1,0 +1,7 @@
+.login Button:hover{
+    cursor: pointer;
+    background-color: rgb(33, 5, 219);
+}
+.forget:hover{
+    background-color: unset!important;
+}

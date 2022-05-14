@@ -5,7 +5,10 @@ import Blog from './Pages/Blog/Blog';
 import Footer from './Pages/Footer/Footer';
 import Header from './Pages/Header/Header'
 import Home from './Pages/Home/Home';
+import Login from './Pages/Login/Login';
 import NotFound from './Pages/NotFound/NotFound';
+import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import SignUp from './Pages/SignUp/SignUp';
 import UpdateProduct from './Pages/UpdateProduct/UpdateProduct';
 
 function App() {
@@ -17,7 +20,17 @@ function App() {
        <Route path="/home" element={<Home></Home>}></Route>
        <Route path="/blog" element={<Blog></Blog>}></Route>
        <Route path="/addSupplier" element={<AddSupplier></AddSupplier>}></Route>
-       <Route path="/books/update/:productId" element={<UpdateProduct></UpdateProduct>}></Route>
+       <Route path="/login" element={<Login></Login>}></Route>
+       <Route path="/signup" element={<SignUp></SignUp>}></Route>
+       <Route path="/books/update/:productId" element={
+         <RequireAuth>
+            <UpdateProduct></UpdateProduct>
+            </RequireAuth>
+      
+       }></Route>
+
+       
+
        <Route path="*" element={<NotFound></NotFound>}></Route>
      </Routes> 
      <Footer></Footer>
