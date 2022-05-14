@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const PublisherDetails = ({ publisher }) => {
     const { supply, description, price, picture, quantity, email, _id } = publisher;
@@ -26,7 +26,7 @@ const PublisherDetails = ({ publisher }) => {
                             Amount: {price}
                         </Card.Text>
                         <Card.Text className='text-light bg-dark p-2'>
-
+            
                             Quantity: {quantity}
                         </Card.Text>
                         <Card.Text className='text-light bg-dark p-2'>

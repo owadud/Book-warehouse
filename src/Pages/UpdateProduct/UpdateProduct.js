@@ -14,7 +14,7 @@ const UpdateProduct = () => {
             .then(res => res.json())
             .then(data => setProduct(data))
 
-    }, []);
+    }, [productId]);
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete?');

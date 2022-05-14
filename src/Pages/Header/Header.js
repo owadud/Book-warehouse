@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.config';
@@ -30,6 +30,11 @@ const Header = () => {
                                
                                 
                             }
+                            {   user?
+                                <Nav.Link as={Link} to="publisher">All Supplier</Nav.Link> : ''
+                                
+                            }
+                            
                             
                             {
                                 user ?
