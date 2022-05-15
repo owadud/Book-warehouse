@@ -13,7 +13,7 @@ const AllPublisher = () => {
     return (
         <div id="services" className='container mb-4'>
         <div className="row">
-        <h1 className='text-primary text-center mt-5'>Choose Your Plan </h1>
+        <h1 className='text-primary text-center mt-5'>Publisher Collection</h1>
         <div className="publisher-container mt-5 ">
         {
             publishers.map(publisher => <PublisherDetails

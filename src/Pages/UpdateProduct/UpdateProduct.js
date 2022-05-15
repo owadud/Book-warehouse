@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 const UpdateProduct = () => {
     const { productId } = useParams();
@@ -30,6 +31,7 @@ const UpdateProduct = () => {
                 console.log(result);
             })
         }
+        toast('Successfully deleted');
     }
 
     return (
@@ -41,13 +43,14 @@ const UpdateProduct = () => {
                 <h2>Email: {product.email}</h2>
                 <h2>Phone: {product.phone}</h2>
                 <h2>Amount: {product.quantity}</h2>
-                <Link to="/checkout">
+                <Link to="/delivered">
                     <button className='btn btn-primary'>Delivered</button>
                 </Link>
                 
                 <button className='btn btn-danger' onClick={() => handleDelete(product._id)}>Delete</button>
                
             </div>
+            <ToastContainer/>
         </div>
     );
 };

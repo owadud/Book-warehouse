@@ -12,7 +12,7 @@ const SignUp = () => {
         createUserWithEmailAndPassword,
         user,
         loading,
-        error,
+        
     ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
     const [updateProfile, updating] = useUpdateProfile(auth);
 
@@ -44,8 +44,8 @@ const SignUp = () => {
     }
 
     return (
-        <div className='register-form bg-dark p-4'>
-            <h2 style={{ textAlign: 'center' }} className='text-light'>Please Register</h2>
+        <div className='register-form bg-secondary p-4 mt-4'>
+            <h2 style={{ textAlign: 'center' }} className='text-light'>SignUp</h2>
             <form onSubmit={handleRegister}>
                 <input type="text" name="name" id="" placeholder='Your Name' />
 
@@ -54,14 +54,14 @@ const SignUp = () => {
                 <input type="password" name="password" id="" placeholder='Password' required />
                 <input onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
                
-                <label className={`ps-2 ${agree ? 'text-info' : 'text-danger'}`} htmlFor="terms">Accept Terms and Conditions</label>
+                <label className={`ps-2 ${agree ? 'text-light' : 'text-warning'}`} htmlFor="terms">Accept Terms and Conditions</label>
                 <input
                     disabled={!agree}
-                    className='w-50 mx-auto btn btn-primary mt-2'
+                    className='w-50 mx-auto btn btn-success mt-2'
                     type="submit"
                     value="Register" />
             </form>
-            <p className='text-info'>Already have an account? <Link to="/login" className='text-primary pe-auto text-decoration-none' onClick={navigateLogin}>Please Login</Link> </p>
+            <p className='text-light'>Already have an account? <Link to="/login" className='text-info fs-5 pe-auto text-decoration-none' onClick={navigateLogin}>Please Login</Link> </p>
             <Social></Social>
         </div>
     );

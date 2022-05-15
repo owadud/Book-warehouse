@@ -22,7 +22,7 @@ const Social = () => {
         }
     
         if (error) {
-            errorElement = <p className='text-danger'>Error: {error?.message}</p>
+            errorElement = <p className='text-danger bg-light fw-bold mt-2 p-1'>Error: {error?.message}</p>
         }
     
         if (user) {
@@ -31,8 +31,8 @@ const Social = () => {
     
         return (
             <div>
-                <div className='text-center mt-2 text-light bg-warning p-1'>
-                    <h5>Login with your Gmail Account</h5>
+                <div className='text-center mt-2 text-light bg-dark p-2'>
+                    <h5 className='fw-bold'>Login with your Gmail Account</h5>
                 </div>
                 {errorElement}
                 <div className='google'>

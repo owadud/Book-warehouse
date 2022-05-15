@@ -64,8 +64,8 @@ function Login() {
     }
     return (
       
-             <div className='container w-50 mx-auto login bg-dark p-4'>
-            <h2 className='text-light bg-info text-center mt-2 p-2'>Please Login or Register</h2>
+             <div className='container w-50 mx-auto login bg-secondary m-4 p-4'>
+            
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
@@ -76,14 +76,17 @@ function Login() {
                 <Button variant="success w-50 mx-auto d-block mb-2" type="submit">
                     Login
                 </Button>
-                <Button variant="success w-50 mx-auto d-block mb-2" type="submit">
-                <Link to="/signup" className='text-light pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link>
+                <p className='text-info text-center'>Forget Password? <Button className='forget  btn btn-warning text-light pe-auto text-decoration-none' onClick={resetPassword} >Reset Password</Button> </p>
+                <Social></Social>
+                <p className='text-info text-center'>Don't have Account?</p>
+             <Button variant="success w-50 mx-auto d-block mb-2" type="submit">
+                <Link to="/signup" className='text-light pe-auto text-decoration-none' onClick={navigateRegister}>SignUp</Link>
                 </Button>
             </Form>
             {errorElement}
            
-            <p className='text-info'>Forget Password? <Button className='forget btn btn-warning text-light pe-auto text-decoration-none' onClick={resetPassword} >Reset Password</Button> </p>
-             <Social></Social>
+            
+             
              <ToastContainer />
            
         </div>

@@ -3,7 +3,7 @@ import { Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const PublisherDetails = ({ publisher }) => {
-    const { supply, description, price, picture, quantity, email, _id } = publisher;
+    const { supply, description, price, picture, quantity, _id } = publisher;
 
     const navigate = useNavigate();
 
@@ -16,29 +16,24 @@ const PublisherDetails = ({ publisher }) => {
 
                 <Card>
                     <Card.Img className="text-center" variant="top" src={picture} />
-                    <Card.Body>
-                        <Card.Title className='text-warning'>{supply}</Card.Title>
-                        <Card.Text className="text-info">
-                            Supply:{supply}
-                        </Card.Text>
-                        <Card.Text className='text-light bg-dark p-2'>
+                    <Card.Body className="bg-dark">
+                        <Card.Title className='text-light p-2'>Publisher:<span className='text-success'> {supply}</span></Card.Title>
+                        
+                        <Card.Text className='text-light p-2'>
 
                             Amount: {price}
                         </Card.Text>
-                        <Card.Text className='text-light bg-dark p-2'>
+                        <Card.Text className='text-light p-2'>
             
                             Quantity: {quantity}
                         </Card.Text>
-                        <Card.Text className='text-light bg-dark p-2'>
+                        
+                        <Card.Text className='text-justify text-light fst-italic'>
 
-                            Email: {email}
-                        </Card.Text>
-                        <Card.Text>
-
-                            Description: {description}
+                           <span className='fw-bold'>Description:</span>  {description}
                         </Card.Text>
                     </Card.Body>
-                    <Card.Footer  >
+                    <Card.Footer className='text-end'>
                         
                             <Button onClick={() => navigateToProductDetail(_id)} variant="primary">Update</Button>
                         
