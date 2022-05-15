@@ -8,7 +8,7 @@ const Footer = () => {
                     <a href="/" className="d-flex align-items-center mb-3 link-dark text-decoration-none">
                         
                     </a>
-                    <p className="text-muted">&copy; 2021</p>
+                    <p className="text-muted">&copy; 2022</p>
                 </div>
 
                 
