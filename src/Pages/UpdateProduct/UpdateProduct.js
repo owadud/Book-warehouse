@@ -9,7 +9,7 @@ const UpdateProduct = () => {
     
     useEffect(() => {
 
-        const url = `http://localhost:5000/books/update/${productId}`;
+        const url = `https://dry-temple-47258.herokuapp.com/books/update/${productId}`;
 
         fetch(url)
             .then(res => res.json())
@@ -20,7 +20,7 @@ const UpdateProduct = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/books/update/${id}`;
+            const url = `https://dry-temple-47258.herokuapp.com/books/update/${id}`;
 
             fetch(url,{
                 method: 'DELETE',

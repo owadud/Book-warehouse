@@ -8,7 +8,7 @@ const AddSupplier = () => {
 
     const onSubmit = data =>{
         console.log(data);
-        const url = `http://localhost:5000/books`;
+        const url = `https://dry-temple-47258.herokuapp.com/books`;
         
         fetch(url,{
             method: 'POST',
