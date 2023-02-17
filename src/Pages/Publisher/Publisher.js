@@ -7,7 +7,7 @@ const Publisher = () => {
     const [publishers, setPublisher] = useState([]);
 
     useEffect(() => {
-        fetch('https://dry-temple-47258.herokuapp.com/books')
+        fetch('https://bookwarehouse.onrender.com/books')
             .then(res => res.json())
             .then(data => setPublisher(data));
     }, [])

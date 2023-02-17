@@ -8,7 +8,7 @@ const AddSupplier = () => {
 
     const onSubmit = data =>{
         console.log(data);
-        const url = `https://dry-temple-47258.herokuapp.com/books`;
+        const url = `https://bookwarehouse.onrender.com/books`;
         
         fetch(url,{
             method: 'POST',
@@ -41,7 +41,7 @@ const AddSupplier = () => {
             <input className='mb-2' value={value} placeholder='Photo URL' type="text" {...register("picture")} required />
             <input type="submit" value="Add supplier" />
         </form>
-        <ToastContainer />
+        <ToastContainer /> 
     </div>
     );
 };
